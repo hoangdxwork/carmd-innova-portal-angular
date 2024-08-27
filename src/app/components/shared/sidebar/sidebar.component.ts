@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
 import { ROUTES } from "../../../commons/consts/route.const";
+import { CommonModule } from "@angular/common";
 
 @Component({
     standalone: true,
+    imports: [CommonModule],
     selector: 'app-sidebar',
     templateUrl: 'sidebar.component.html',
 })
