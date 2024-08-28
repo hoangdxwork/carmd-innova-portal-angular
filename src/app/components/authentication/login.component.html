@@ -10,14 +10,18 @@
                 width="200px" alt="profile">
             </div> -->
             <div class="mb-3">
-              <input type="text" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="Username">
+              <input type="text" class="form-control" id="Username" placeholder="Username"
+                [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="Password">
+              <input type="password" class="form-control" id="password" placeholder="Password"
+              [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}">
             </div>
+            <p *ngIf="isError" class="text-danger mb-2">{{errorMessage}}</p>
             <div class="text-center">
-                <button type="submit" class="btn btn-color px-5 mb-5 w-100">
-                    Login
+                <button type="button" class="btn btn-color px-5 mb-5 w-100" (click)="onSubmit()">
+                    <span *ngIf="!isLoading">Login</span>
+                    <app-loading-spinner *ngIf="isLoading" [type]="spinnerType" [color]="spinnerColor"></app-loading-spinner>
                 </button>
             </div>
             <div id="emailHelp" class="form-text text-center mb-5 text-dark">

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
-import { LoginComponent } from './components/authentication/login.component';
 
 export const routes: Routes = [
     {
@@ -17,6 +16,6 @@ export const routes: Routes = [
     },
     {
         path: 'login',
-        component: LoginComponent,
+        loadComponent: () => import('./components/authentication/login.component').then(m => m.LoginComponent),
     }
 ];

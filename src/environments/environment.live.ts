@@ -1,4 +1,5 @@
 export const environment = {
-  production: true,
-  env: 'live'
+  protocol: 'https://',
+  serverApiUrl: '',
+  appVersion: '1.0.0'
 };
